@@ -6,9 +6,9 @@
 
 const express = require("express");
 const http = require("http");
-const path = require("path");
+const path = require("path");  //  Helps you handle file paths (like joining folder names).
 const socketio = require("socket.io");
-const { dirname } = require("path");
+const { dirname } = require("path");  // Gives you the current folder path
 
 
 
@@ -26,9 +26,9 @@ app.set("view engine", "ejs")  // telling Express: I will use EJS files for rend
 
 app.use(express.static(path.join(__dirname, "public")))
 
-io.on("connection", function(socket){  // socket represents the connected client.
+io.on("connection", function(socket){  // socket represents the connected client(user).
     socket.on("send-location", function(data){
-        io.emit("recieve-location", {id: socket.id, ...data})
+        io.emit("recieve-location", {id: socket.id, ...data})  // broadcasts the data to all users using io.emit
     })   
     console.log("Connected")
 

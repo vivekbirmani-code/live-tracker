@@ -10,13 +10,13 @@ if(navigator.geolocation){  // Checking for User Location Access, navigator.geol
     {
         enableHighAccuracy: true,
         maximumAge: 0,  // no caching will be done, means we will need instataneous data
-        timeout: 5000,
+        timeout: 2000,
     }
 );
 }
 
 
-const map = L.map("map").setView([0, 0], 16);  // from leaflet we can use L.map, to ask permissions for location permissions
+const map = L.map("map").setView([0, 0], 16);  // from leaflet we can use L.map, to ask permissions for location permissions, it Creates a map in the HTML element with id="map".
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: "Vivek Birmani"
@@ -40,6 +40,6 @@ socket.on("recieve-location", (data) => {
 socket.on("user-disconnected", (id) => {
     if(markers[id]){
         map.removeLayer(markers[id]);
-        delete markers[id]
+        delete markers[id];
     }
 })
