@@ -1,18 +1,20 @@
 {
-  "name": "realtime_tracker-project",
+  "name": "realtime-tracker-project",
   "version": "1.0.0",
+  "description": "A real-time location tracking app using Express, EJS, and Socket.IO.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Vivek Birmani",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "nodemon": "^3.1.10",
     "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
